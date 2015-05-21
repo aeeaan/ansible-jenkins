@@ -1,2 +1,6 @@
 ---
-# tasks file for jenkins
+- name: configure jenkins repo
+  include: repos.yml
+  tags:
+    - repos
+    - packages
