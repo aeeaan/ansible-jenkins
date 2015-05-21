@@ -24,3 +24,10 @@
   tags:
     - jenkins
     - configuration
+
+- name: ensure jenkins is enabled and running
+  service: name=jenkins enabled=yes state=started
+  tags:
+    - jenkins
+    - configuration
+    - services
