@@ -20,6 +20,7 @@
 
 - name: configure jenkins startup
   template: src=sysconfig.j2 dest=/etc/sysconfig/jenkins owner=root group=root mode=0600
+  notify: restart jenkins
   tags:
     - jenkins
     - configuration
