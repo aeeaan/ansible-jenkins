@@ -1,3 +1,7 @@
 ---
 jenkins_stable_repo: true
-
+jenkins_port: 8080
+jenkins_listen_address: ''
+jenkins_ajp_port: 8009
+jenkins_ajp_listen_address: ''
+jenkins_debug_level: 5

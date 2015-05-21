@@ -3,6 +3,7 @@
   rpm_key: key=http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key state=present
   when: jenkins_stable_repo == true
   tags:
+    - jenkins
     - repos
     - packages
 
@@ -10,6 +11,7 @@
   rpm_key: key=http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key state=present
   when: jenkins_stable_repo != true
   tags:
+    - jenkins
     - repos
     - packages
 
@@ -17,6 +19,7 @@
   copy: src=redhat-stable.repo dest=/etc/yum.repos.d/jenkins.repo owner=root group=root mode=0644
   when: jenkins_stable_repo == true
   tags:
+    - jenkins
     - repos
     - packages
 
@@ -24,5 +27,6 @@
   copy: src=redhat.repo dest=/etc/yum.repos.d/jenkins.repo owner=root group=root mode=0644
   when: jenkins_stable_repo != true
   tags:
+    - jenkins
     - repos
     - packages

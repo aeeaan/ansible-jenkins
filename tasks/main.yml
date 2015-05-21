@@ -2,5 +2,24 @@
 - name: configure jenkins repo
   include: repos.yml
   tags:
+    - jenkins
     - repos
     - packages
+
+- name: install java
+  yum: name=java state=present
+  tags:
+    - jenkins
+    - packages
+
+- name: install jenkins
+  yum: name=jenkins state=present
+  tags:
+    - jenkins
+    - packages
+
+- name: configure jenkins startup
+  template: src=sysconfig.j2 dest=/etc/sysconfig/jenkins owner=root group=root mode=0600
+  tags:
+    - jenkins
+    - configuration
