@@ -31,3 +31,21 @@
     - jenkins
     - configuration
     - services
+
+- name: open jenkins port
+  firewalld: port={{ jenkins_port }}/tcp permanent=true state=enabled
+  when: jenkins_open_port
+  notify: reload firewall
+  tags:
+    - jenkins
+    - configuration
+    - firewall
+
+- name: open jenkins ajp port
+  firewalld: port={{ jenkins_ajp_port }}/tcp permanent=true state=enabled
+  when: jenkins_open_ajp_port
+  notify: reload firewall
+  tags:
+    - jenkins
+    - configuration
+    - firewall
