@@ -11,4 +11,5 @@ galaxy_info:
     - 7
   categories:
   - development
-dependencies: []
+dependencies:
+  - { role: correcthorse.common }
